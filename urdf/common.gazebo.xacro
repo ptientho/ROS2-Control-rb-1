@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<!-- ROS CONTROL GAZEBO PLUGIN -->
+    <!-- <xacro:macro name="ros2_control">
+
+	</xacro:macro> -->
+
+	<xacro:macro name="gazebo_colors" params="prefix">
+		<gazebo reference="$(arg prefix)base_footprint">
+			<material>Gazebo/Green</material>
+		</gazebo>
+
+		<gazebo reference="$(arg prefix)base_link">
+			<material>Gazebo/Black</material>
+		</gazebo>
+
+		<gazebo reference="$(arg prefix)front_cover_link">
+			<material>Gazebo/Black</material>
+		</gazebo>
+	</xacro:macro>
+</robot>
