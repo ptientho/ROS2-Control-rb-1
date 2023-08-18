@@ -4,21 +4,22 @@
 	
 	<xacro:include filename="$(find rb1_ros2_description)/urdf/elevator/elevator.gazebo.xacro"/>
 	
-	<xacro:macro name="elevator_platform" params="prefix parent hq *origin">
+	<xacro:macro name="elevator_platform" params="prefix parent hq">
 	<!-- PARAMS: -->
 	<!-- name : name of the link: -->
 	<!-- hq: selects model in high quality (.dae) -->
     <xacro:macro name="solid_cuboid_inertia" params="m h d w">
 		<inertia  ixx="${(m*(h*h+d*d))/12}" ixy = "0" ixz = "0"
               iyy="${(m*(w*w+d*d))/12}" iyz = "0"
-              izz="${(m*(w*w+h*h))/12}"
-     /> 
+              izz="${(m*(w*w+h*h))/12}"/> 
     </xacro:macro>
+    
 	<!-- ELEVATOR_BASE_LINK -->
 	<joint name="${prefix}_base_joint" type="fixed">
 		<parent link="${parent}"/>
 		<child link="${prefix}_base_link"/>
-		<xacro:insert_block name="origin" />
+        <origin xyz="0 0 0.23" rpy="0 0 0"/>
+		<!--xacro:insert_block name="origin" /-->
 	</joint> 
 	
 	<link name="${prefix}_base_link">
@@ -32,7 +33,7 @@
 		<inertial>
 			<mass value="0.005" />
 			<origin xyz="0 0 -0.27" />
-			<solid_cuboid_inertia m="0.005" h="0.05" d="0.05" w="0.05"/>
+			<xacro:solid_cuboid_inertia m="0.005" h="0.05" d="0.05" w="0.05"/>
 		</inertial> 
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />
@@ -75,7 +76,7 @@
 		<inertial>
 			<mass value="0.005" />
 			<origin xyz="0 0 -0.27" />
-			<solid_cuboid_inertia m="0.005" h="0.05" d="0.05" w="0.05"/>
+			<xacro:solid_cuboid_inertia m="0.005" h="0.05" d="0.05" w="0.05"/>
 		</inertial> 
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0" />

@@ -38,6 +38,7 @@
 			<turnGravityOff>false</turnGravityOff>
 			<implicitSpringDamper>1</implicitSpringDamper>
 		</gazebo-->
+
 	</xacro:macro>
 
 </robot>
