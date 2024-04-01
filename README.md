@@ -43,9 +43,13 @@
     ros2 control list_controllers
     
 <p><strong>expected output:</strong><br>
-        forward_effort_controller[forward_command_controller/ForwardCommandController] active<br>
-        joint_state_broadcaster[joint_state_broadcaster/JointStateBroadcaster] active<br>
-        diffbot_base_controller[diff_drive_controller/DiffDriveController] active<br>
+    
+```    
+forward_effort_controller[forward_command_controller/ForwardCommandController] active
+joint_state_broadcaster[joint_state_broadcaster/JointStateBroadcaster] active
+diffbot_base_controller[diff_drive_controller/DiffDriveController] active
+```
+
 <strong>Note:</strong> if not all controllers show up, use ctrl+c to shutdown the nodes and relaunch again.</p>
 
 ## Moving the robot's lifting unit
