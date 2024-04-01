@@ -1,4 +1,4 @@
-# checkpoint8-ROS2-Control
+# ROS2-Control for RB-1 robot
 
 ## Introduction
 
